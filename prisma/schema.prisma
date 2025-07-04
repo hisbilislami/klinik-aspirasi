@@ -11,3 +11,13 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Aspiration {
+  id        Int       @id @default(autoincrement())
+  name      String
+  date      DateTime
+  report    String
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+}
