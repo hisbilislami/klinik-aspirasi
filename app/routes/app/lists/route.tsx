@@ -18,6 +18,12 @@ import {
   useDataTable,
 } from "~/components/table";
 import { columns } from "./column";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export const loader = ({ request }: LoaderFunctionArgs) => {
   return loaderHandler(request);
@@ -70,13 +76,10 @@ const Lists = () => {
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
-  const now = new Date();
-  const start = new Date(now.getFullYear(), now.getMonth(), 1)
-    .toISOString()
-    .slice(0, 10);
-  const end = new Date(now.getFullYear(), now.getMonth() + 1, 0)
-    .toISOString()
-    .slice(0, 10);
+  const now = dayjs().tz("Asia/Jakarta");
+
+  const start = now.startOf("month").format("YYYY-MM-DD");
+  const end = now.endOf("month").format("YYYY-MM-DD");
 
   return (
     <AppCardForm title="" isForm={false}>

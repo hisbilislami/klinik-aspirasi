@@ -17,6 +17,8 @@ import InputDate from "~/components/form/input-date";
 
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import { useEffect } from "react";
 import { getToast } from "~/utils/toast.server";
 
@@ -32,6 +34,8 @@ export const action = ({ request }: ActionFunctionArgs) => {
 };
 
 dayjs.extend(customParseFormat);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const MainPage = () => {
   const lastResult = useActionData<typeof action>();
@@ -47,7 +51,7 @@ const MainPage = () => {
       return parseWithZod(formData, { schema });
     },
     defaultValue: {
-      date: dayjs().format("DD/MM/YYYY"),
+      date: dayjs().tz("Asia/Jakarta").format("YYYY-MM-DD"),
     },
   });
 
