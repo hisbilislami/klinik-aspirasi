@@ -22,7 +22,7 @@ export const actionHandler = async (request: ActionFunctionArgs["request"]) => {
       },
     });
 
-    return redirectWithToast("/app/", {
+    return redirectWithToast("/app?success=true", {
       title: "Data submitted.",
       type: "success",
       description: "Data successfully submitted.",

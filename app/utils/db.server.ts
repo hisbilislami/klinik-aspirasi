@@ -1,11 +1,11 @@
-import { PrismaBetterSQLite3 } from "@prisma/adapter-better-sqlite3";
-import { PrismaClient } from "../../generated/prisma";
+import { PrismaClient } from "@prisma/client";
+import { singleton } from "./singleton.server";
 
-const adapter = new PrismaBetterSQLite3({
-  // url: process.env.DATABASE_URL
-  url: "file:./prisma/dev.db",
+export const prisma = singleton("prisma", () => {
+  return new PrismaClient({
+    log:
+      process.env.NODE_ENV === "development"
+        ? ["query", "error", "warn"]
+        : ["error"],
+  });
 });
-
-const prisma = new PrismaClient({ adapter });
-
-export { prisma };

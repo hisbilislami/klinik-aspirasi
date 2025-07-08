@@ -18,7 +18,7 @@ export default function AuthenticationLayout() {
       {/* </div> */}
       <div className="h-full max-h-full flex flex-col overflow-hidden w-full items-center rounded-2xl">
         {/* <Topnavbar username={data.username} email={data.email} /> */}
-        <div className="w-full overflow-y-scroll overflow-x-hidden transition-[transform,width] duration-300 rounded-2xl">
+        <div className="w-full overflow-y-hidden overflow-x-hidden transition-[transform,width] duration-300 rounded-2xl">
           <Outlet />
         </div>
       </div>

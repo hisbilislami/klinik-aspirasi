@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { getInputProps } from "@conform-to/react";
 import { TextInput } from "@mantine/core";
 
@@ -16,6 +17,7 @@ function InputText(params: InputTextProps) {
   const field = fields[name];
   const { key, ...inputProps } = getInputProps(field, { type: "text" });
 
+  // eslint-disable-next-line react/prop-types
   const { key: _key, ...restProps }: { [key: string]: unknown } = props;
   return (
     <TextInput

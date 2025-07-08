@@ -1,6 +1,9 @@
 import { getInputProps, useInputControl } from "@conform-to/react";
 import { DateInput } from "@mantine/dates";
 import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
 
 import { InputDateProps } from "./types";
 
@@ -18,7 +21,7 @@ function InputDate(params: InputDateProps) {
   const { key, ...fieldProps } = getInputProps(field, { type: "text" });
 
   const fieldControl = useInputControl(
-    field as { initialValue?: string; name: string; formId: string },
+    field as { initialValue?: string; name: string; formId: string }
   );
 
   const getDefaultValue = () => {
@@ -28,8 +31,15 @@ function InputDate(params: InputDateProps) {
   };
 
   const getValue = () => {
-    if (!fieldControl.value) return undefined;
-    return new Date(fieldControl.value);
+    if (fieldControl.value) {
+      return new Date(fieldControl.value);
+    }
+
+    if (fieldProps.defaultValue) {
+      return new Date(fieldProps.defaultValue);
+    }
+
+    return undefined;
   };
 
   return (
