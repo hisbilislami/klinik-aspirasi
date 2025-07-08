@@ -70,6 +70,14 @@ const Lists = () => {
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
+  const now = new Date();
+  const start = new Date(now.getFullYear(), now.getMonth(), 1)
+    .toISOString()
+    .slice(0, 10);
+  const end = new Date(now.getFullYear(), now.getMonth() + 1, 0)
+    .toISOString()
+    .slice(0, 10);
+
   return (
     <AppCardForm title="" isForm={false}>
       <div className="flex justify-center items-center mb-5">
@@ -91,17 +99,26 @@ const Lists = () => {
         <Icon icon="tabler:plus"></Icon>
       </Button>
 
-      <DataTable
-        className="mt-3 w-full"
-        columns={columns}
-        table={table}
-        withAction={false}
-        onSearch={onSearch}
-        textName="Budget Tracker"
-        withSearchField={true}
-        onRefresh={onRefresh}
-      />
-      <DataTablePagination table={table} />
+      <div>
+        <Button
+          onClick={() =>
+            window.open(`/app/report?start=${start}&end=${end}`, "_blank")
+          }
+        >
+          Cetak Laporan Bulanan
+        </Button>
+        <DataTable
+          className="mt-3 w-full"
+          columns={columns}
+          table={table}
+          withAction={false}
+          onSearch={onSearch}
+          textName="Budget Tracker"
+          withSearchField={true}
+          onRefresh={onRefresh}
+        />
+        <DataTablePagination table={table} />
+      </div>
     </AppCardForm>
   );
 };
