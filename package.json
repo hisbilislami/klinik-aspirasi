@@ -2,7 +2,7 @@
   "name": "klinik-aspirasi",
   "private": true,
   "sideEffects": false,
-  "type": "module",
+  "type": "commonjs",
   "description": "Klinik Aspirasi Desktop App for DPRD Kab. Probolinggo",
   "author": {
     "name": "Hisbil",
