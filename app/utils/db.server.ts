@@ -1,4 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import pkg from "@prisma/client";
+const { PrismaClient } = pkg;
 import { singleton } from "./singleton.server";
 
 export const prisma = singleton("prisma", () => {
