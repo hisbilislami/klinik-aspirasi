@@ -29,9 +29,11 @@ export const actionHandler = async (request: ActionFunctionArgs["request"]) => {
     });
   } catch (error) {
     let response: Response;
+    let message = null;
 
     if (error instanceof Error) {
       console.log(error.stack);
+      message = error.message;
     }
 
     if (error instanceof BadRequestError) {
@@ -49,7 +51,7 @@ export const actionHandler = async (request: ActionFunctionArgs["request"]) => {
       headers: await createToastHeaders({
         type: "error",
         title: "Failed",
-        description: "Try again in a few minutes",
+        description: "Try again in a few minutes" + message,
       }),
     });
 
