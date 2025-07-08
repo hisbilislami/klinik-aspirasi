@@ -74,6 +74,9 @@ importers:
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
+      prisma:
+        specifier: ^6.11.0
+        version: 6.11.0(typescript@5.8.3)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -138,9 +141,6 @@ importers:
       postcss-simple-vars:
         specifier: ^7.0.1
         version: 7.0.1(postcss@8.5.6)
-      prisma:
-        specifier: ^6.11.0
-        version: 6.11.0(typescript@5.8.3)
       remix-flat-routes:
         specifier: ^0.8.5
         version: 0.8.5
