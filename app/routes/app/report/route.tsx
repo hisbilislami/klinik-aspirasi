@@ -90,10 +90,11 @@ export default function ReportPreview() {
                   key={report.id}
                   className="break-inside-avoid print:break-inside-avoid"
                 >
-                  <td>{index + 1}</td> {/* 👈 Numbering starts from 1 */}
-                  <td>{formattedDate}</td>
-                  <td>{report?.name}</td>
-                  <td>{report?.report}</td>
+                  <td className="text-left">{index + 1}</td>{" "}
+                  {/* 👈 Numbering starts from 1 */}
+                  <td className="text-left">{formattedDate}</td>
+                  <td className="text-left">{report?.name}</td>
+                  <td className="text-left">{report?.report}</td>
                 </tr>
               );
             })}
