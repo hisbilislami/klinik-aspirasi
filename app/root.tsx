@@ -16,6 +16,7 @@ import "@mantine/nprogress/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
+import "~/styles/print.css";
 
 import { NavigationProgress, nprogress } from "@mantine/nprogress";
 import { Notifications } from "@mantine/notifications";
