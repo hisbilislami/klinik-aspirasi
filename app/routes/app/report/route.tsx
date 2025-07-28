@@ -58,6 +58,8 @@ export default function ReportPreview() {
         <Table
           mt="md"
           striped
+          withTableBorder
+          withColumnBorders
           className="break-inside-avoid print:break-inside-avoid"
         >
           <thead>
@@ -65,7 +67,7 @@ export default function ReportPreview() {
               <th className="text-left">No.</th>
               <th className="text-left">Tanggal</th>
               <th className="text-left">Nama</th>
-              <th className="text-left">Aspirasi</th>
+              <th className="text-left">Keluhan / Aduan</th>
             </tr>
           </thead>
           <tbody>
