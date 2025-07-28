@@ -94,8 +94,12 @@ export default function ReportPreview() {
                 >
                   <td className="text-left">{index + 1}</td>{" "}
                   {/* 👈 Numbering starts from 1 */}
-                  <td className="text-left">{formattedDate}</td>
-                  <td className="text-left">{report?.name}</td>
+                  <td className="text-left whitespace-nowrap">
+                    {formattedDate}
+                  </td>
+                  <td className="text-left whitespace-nowrap">
+                    {report?.name}
+                  </td>
                   <td className="text-left">{report?.report}</td>
                 </tr>
               );
