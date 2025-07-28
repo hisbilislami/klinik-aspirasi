@@ -42,7 +42,7 @@ export default function ReportPreview() {
   }, []);
 
   return (
-    <div className="h-full overflow-hidden w-full">
+    <div className="max-h-screen min-h-screen overflow-hidden w-full print:!h-auto print:!min-h-0 print:!max-h-none print:!overflow-visible">
       {/* Your report content here */}
       <div
         style={{ padding: "2rem", fontFamily: "sans-serif" }}
