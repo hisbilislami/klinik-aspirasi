@@ -10,4 +10,15 @@
     height: auto;
     overflow: visible !important;
   }
+
+  table {
+    tr {
+      th {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid black;
+      }
+    }
+  }
 }
