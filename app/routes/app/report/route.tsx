@@ -62,10 +62,10 @@ export default function ReportPreview() {
         >
           <thead>
             <tr>
-              <th>No.</th>
-              <th>Tanggal</th>
-              <th>Nama</th>
-              <th>Aspirasi</th>
+              <th className="text-left">No.</th>
+              <th className="text-left">Tanggal</th>
+              <th className="text-left">Nama</th>
+              <th className="text-left">Aspirasi</th>
             </tr>
           </thead>
           <tbody>
@@ -73,7 +73,7 @@ export default function ReportPreview() {
               const report = item as {
                 id: number;
                 name: string;
-                description: string;
+                report: string;
                 date: string;
               };
 
@@ -93,7 +93,7 @@ export default function ReportPreview() {
                   <td>{index + 1}</td> {/* 👈 Numbering starts from 1 */}
                   <td>{formattedDate}</td>
                   <td>{report?.name}</td>
-                  <td>{report?.description}</td>
+                  <td>{report?.report}</td>
                 </tr>
               );
             })}
