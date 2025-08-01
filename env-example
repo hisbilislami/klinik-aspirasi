@@ -1,0 +1,7 @@
+#DATABASE_URL="file:./ka.db"
+DATABASE_URL=postgres://esign:esign@localhost:54324/ka
+
+NODE_ENV=development # production or test or development
+
+SESSION_SECRET=38d34d11169343c6
+SESSION_TTL=3600
